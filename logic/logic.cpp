@@ -1,5 +1,5 @@
 #include "logic.hpp"
-#include "snake.hpp"
+#include "../objects/snake.hpp"
 
 Logic::Logic(int width,int height) : player(10,10),fruit(width-1,height-1) {
 

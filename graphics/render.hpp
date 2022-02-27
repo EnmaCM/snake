@@ -18,6 +18,7 @@ class Screen{
 	Screen(int w,int h);
     ~Screen();
 	void render(std::vector<std::vector<std::string>> buffer);
+	void render(std::string buffer);
 	std::string vectorToString(std::vector<std::vector<std::string>> v);
 
 };

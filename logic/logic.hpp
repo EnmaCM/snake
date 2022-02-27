@@ -1,7 +1,7 @@
 #include<string>
 #include<vector>
-#include "snake.hpp"
-#include "food.hpp"
+#include "../objects/snake.hpp"
+#include "../objects/food.hpp"
 
 class Logic{
 	private:

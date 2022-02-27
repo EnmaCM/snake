@@ -19,6 +19,11 @@ void Screen::render(std::vector<std::vector<std::string>> buffer) {
     printw(bufferParsed.c_str());
     refresh();
 }
+void Screen::render(std::string buffer){
+    clear();
+    printw(buffer.c_str());
+    refresh();
+}
 
  std::string Screen::vectorToString(std::vector<std::vector<std::string>> v) {
     std::string newB = "";

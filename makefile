@@ -1,25 +1,25 @@
 # LBFLAGS := --lib
 
 
-clean: lo
-	-rm -f *.o
+clean: snakeGame
+	-rm -f bin/*.o
 
-lo: logic.hpp character.o snake.hpp render.hpp lo.o render.o logic.o logic.hpp food.hpp food.o 
-	g++ lo.o  character.o render.o food.o logic.cpp snake.hpp render.hpp logic.hpp food.hpp -o lo -lncurses
+snakeGame: game_over.hpp logic/logic.hpp character.o objects/snake.hpp graphics/render.hpp main.o render.o logic.o logic/logic.hpp objects/food.hpp food.o 
+	g++ bin/main.o game_over.hpp bin/character.o bin/render.o bin/food.o logic/logic.cpp objects/snake.hpp graphics/render.hpp logic/logic.hpp objects/food.hpp -o snakeGame -lncurses
 
 character.o: 
-	g++ -c character.cpp  -o character.o
+	g++ -c objects/character.cpp  -o bin/character.o
 
-lo.o:
-	g++ -c lo.cpp -o lo.o -lncurses 	
+main.o:
+	g++ -c main.cpp -o bin/main.o -lncurses 	
 
 render.o:
-	g++ -c render.cpp -o render.o -lncurses
+	g++ -c graphics/render.cpp -o bin/render.o -lncursesw	
 
 logic.o:
-	g++ -c logic.cpp -o logic.o 
+	g++ -c logic/logic.cpp -o bin/logic.o 
 food.o:
-	g++ -c food.cpp -o food.o
+	g++ -c objects/food.cpp -o bin/food.o
 
 .DELETE_ON_ERROR: 
-	-rm -f *.o
+	-rm -f bin/	*.o
